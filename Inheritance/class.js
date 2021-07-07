@@ -8,6 +8,33 @@ Methods --- define behavior on state
 
 Classes use prototype-based inheritance: if two objects inherit properties from the same object, then we say those objects are instances of the same class. 
 
+The constructor method is a special method for creating and intializing an object created with a class. A constructor can use the super keyword to call the constructor of the super class
+
 
 
 */
+
+class Rectangle {
+    constructor(height, width) {
+        this.height = height
+        this.width = width  
+    }
+    get area() {
+        return this.calcArea()
+    }
+
+    calcArea() {
+        return this.height * this.width
+    }
+    
+}
+
+const square = new Rectangle()
+square.height = 6
+square.width = 6
+
+
+console.log(square)
+console.log(square.area)
+
+

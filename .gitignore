@@ -1,3 +1,7 @@
 class.js
-inheritance.js
+global.json
+package-lock.json
+node_modules
+index.js
+scope.js
 prototype.js

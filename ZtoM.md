@@ -139,3 +139,79 @@ const substringCheck = (s) => {
     return maxLength
 }
 ```
+
+## Valid Palindrome (easy)
+
+### Time: O(n) --- Space: O(1)
+
+###### Given a string s, determine if it is a plaindrome, considering only alphanumeric characters and ignoring cases
+
+```JavaScript
+const palindromeCheck = (S) => {
+    let left = 0, right = S.length - 1
+
+    while (left < right) {
+        leftLetter = S[left].toLowerCase()
+        rightLetter = S[right].toLowerCase()
+
+        if (leftLetter === rightLetter) {
+            left++
+            right--
+        }
+    }
+    return true
+}
+```
+
+## Reverse Linked List
+### Time: O(n) --- Space: O(1)
+###### Given the head of a singly linked list, reverse the list, and return te reversed list.
+```JavaScript
+class Node {
+    constructor(val) {
+        this.val = val
+        this.next = next
+    }
+}
+const reverse = (head) => {
+    let node = head, temp, previous
+    if (node.next === null) return node
+    while (node) {
+        temp = node.next
+        node.next = previous
+        previous = node
+        node = temp
+    }
+    return previous
+}
+```
+
+## Valid Parentheses
+### Time: --- Space:
+###### Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+```JavaScript
+const isValid = (S) => {
+    if (S.length === 1) {
+        return false
+    }
+    let stack = []
+    const hash = {
+        ']' : '[',
+        '}' : '{',
+        ')' : '('
+    }
+
+    for (let i = 0; i < S.length; i++) {
+        if (S[i] === hash[']'] || S[i] === hash['}'] || S[i] === hash[')']) {
+            stack.push(S[i])
+        } else if (hash[s[i]] === stack[stack.length - 1] && stack.length !== 0) {
+            stack.pop()
+        } else {
+            return false
+        }
+    }
+
+    if (stack.length === 0) return true
+    else return false
+}
+```

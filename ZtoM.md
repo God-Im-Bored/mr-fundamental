@@ -187,7 +187,7 @@ const reverse = (head) => {
 ```
 
 ## Valid Parentheses
-### Time: --- Space:
+### Time: O(n) --- Space: O(1)
 ###### Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 ```JavaScript
 const isValid = (S) => {
@@ -215,3 +215,4 @@ const isValid = (S) => {
     else return false
 }
 ```
+
